@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Registration</title>
+  <script>
+    function showSummary() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+
+      document.getElementById("page1").style.display = "none";
+      document.getElementById("summaryName").textContent = name;
+      document.getElementById("summaryEmail").textContent = email;
+      document.getElementById("page2").style.display = "block";
+    }
+
+    function goBack() {
+      document.getElementById("page2").style.display = "none";
+      document.getElementById("page1").style.display = "block";
+    }
+  </script>
+</head>
+<body>
+
+  
+  <div id="page1">
+    <h2>Student Registration</h2>
+    Name: <input type="text" id="name"><br><br>
+    Email: <input type="email" id="email"><br><br>
+    <button onclick="showSummary()">Next</button>
+    <button onclick="alert('Form Submitted')">Submit</button>
+  </div>
+
+  
+  <div id="page2" style="display:none;">
+    <h2>Summary</h2>
+    Name: <span id="summaryName"></span><br><br>
+    Email: <span id="summaryEmail"></span><br><br>
+
+    <button onclick="goBack()">Back</button>
+    
+  </div>
+
+</body>
+</html>
